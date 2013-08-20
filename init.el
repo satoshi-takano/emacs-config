@@ -9,14 +9,13 @@
 
 (setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 (setq-default case-fold-search nil)
 
 ;; hide toolbar when using MacEmacs
 (cond 
  ((equal window-system 'ns)
   (dolist (conf (list 
-                 "cocoa-frame.el"
                  "cocoa-font.el"))
     (load (concat user-emacs-directory "conf/cocoa/" conf))))
  ((equal window-system nil)
@@ -30,17 +29,14 @@
 (setq frame-title-format "%f")
 (setq-default truncate-lines t)
 (setq-default truncate-partial-width-windows nil)
-(setq initial-frame-alist
-      (append (list
-        '(width . 188)
-        '(height . 46)
-        '(alpha .8)
-        )
-        initial-frame-alist))
 (setq default-frame-alist initial-frame-alist)
 (setq hl-line-face 'hlline-face)
 (global-hl-line-mode)
-;;(add-to-list 'default-frame-alist '(alpha . 85))
+(add-to-list 'default-frame-alist '(alpha . 85))
+;; tool-bar off
+(tool-bar-mode 0)
+;; scroll-bar off
+(scroll-bar-mode 0)
 
 (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-h" 'backward-delete-char)
@@ -165,6 +161,7 @@ and source-file directory for your debugger." t)
     :front "<style[^>]*>"
     :back "</style>")))
 (mmm-add-mode-ext-class nil "\\.html?\\'" 'embedded-css)
+(mmm-add-mode-ext-class nil "\\.erb?\\'" 'embedded-css)
 
 (mmm-add-classes
  '((html-javascript
@@ -172,6 +169,7 @@ and source-file directory for your debugger." t)
     :front "<script[^>]*>"
     :back "</script>")))
 (mmm-add-mode-ext-class nil "\\.html?\\'" 'html-javascript)
+(mmm-add-mode-ext-class nil "\\.erb?\\'" 'html-javascript)
 
 ;; nav
 (require 'nav)
@@ -179,4 +177,7 @@ and source-file directory for your debugger." t)
 (global-set-key "\C-x\C-d" 'nav-toggle)     ;; C-x C-d で nav をトグル
 
 
-
+;; scss-mode
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(setq scss-compile-at-save nil)
