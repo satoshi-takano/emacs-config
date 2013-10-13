@@ -79,7 +79,7 @@
 ;; anything
 (require 'anything-startup)
 
-;; auto-complete-mode
+;; auto-complete
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
 (ac-config-default)
@@ -181,3 +181,12 @@ and source-file directory for your debugger." t)
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (setq scss-compile-at-save nil)
+
+
+;; perl-completion
+(setq auto-mode-alist (cons '("\\.pl$" . cperl-mode) auto-mode-alist))
+(add-hook  'cperl-mode-hook (lambda ()
+                              (require 'auto-complete)
+                              (require 'perl-completion)
+                              (add-to-list 'ac-sources 'ac-source-perl-completion)
+                              (perl-completion-mode t)))
