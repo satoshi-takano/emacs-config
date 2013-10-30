@@ -34,9 +34,9 @@
 (global-hl-line-mode)
 (add-to-list 'default-frame-alist '(alpha . 85))
 ;; tool-bar off
-(tool-bar-mode 0)
+;;(tool-bar-mode 0)
 ;; scroll-bar off
-(scroll-bar-mode 0)
+;;(scroll-bar-mode 0)
 
 (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-h" 'backward-delete-char)
@@ -77,7 +77,7 @@
 (auto-install-compatibility-setup)
 
 ;; anything
-(require 'anything-startup)
+;; (require 'anything-startup)
 
 ;; auto-complete
 (require 'auto-complete-config)
