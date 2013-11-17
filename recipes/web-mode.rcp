@@ -1,4 +1,0 @@
-(:name web-mode
-       :website "https://github.com/fxbois/web-mode"
-       :type github
-       :pkgname "fxbois/web-mode")

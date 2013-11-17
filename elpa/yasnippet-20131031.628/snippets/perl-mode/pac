@@ -1,0 +1,11 @@
+# key: pac
+# name: pac
+# --
+package ${1:Package};
+use strict;
+use warnings;
+use utf8;
+
+$0
+
+1;
