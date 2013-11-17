@@ -1,4 +1,14 @@
-((("anything-startup" .
+((("Teng" .
+   [1 0 0 0])
+  ("warnings" .
+   [0 0 0 2 0 0 0 0])
+  ("use" .
+   [1 0 0])
+  ("flymake-mode" .
+   [0 0 0 0 0 0 0 0 0 0 1 0])
+  ("perl" .
+   [2 0 0 0])
+  ("anything-startup" .
    [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
   ("anything" .
    [0 0 0 1 0 0 0 0])
@@ -13,4 +23,10 @@
   ("yasnippet-autoloads" .
    [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
   ("dropdown-list" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0])))
+   [0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("add-hook" .
+   [0 0 0 0 0 1 0 0])
+  ("perl-mode-hook" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("flymake-mode-on" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0])))

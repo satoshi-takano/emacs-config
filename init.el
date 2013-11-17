@@ -78,3 +78,18 @@
 
 ;; js-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+
+
+
+;; perl
+(add-hook 'perl-mode-hook '(lambda () (flymake-mode t)))
+
+(defun perltidy-region ()
+  (interactive)
+  (save-excursion
+    (shell-command-on-region (point) (mark) "perltidy -q" nil t)))
+
+(defun perltidy-defun ()
+  (interactive)
+  (save-excursion (mark-defun)
+                  (perltidy-region)))
