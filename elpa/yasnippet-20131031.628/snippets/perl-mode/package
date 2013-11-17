@@ -1,5 +1,5 @@
-# key: pac
-# name: pac
+# key: package
+# name: package
 # --
 package ${1:Package};
 use strict;
