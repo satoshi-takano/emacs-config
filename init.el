@@ -37,7 +37,9 @@
 (global-set-key "\M-n" (kbd "C-u 5 C-n"))
 (global-set-key "\M-p" (kbd "C-u 5 C-p"))
 (global-set-key "\M-c" 'comment-region)
-(define-key global-map (kbd "C-t") 'next-multiframe-window)
+(global-set-key (kbd "C-t") 'next-multiframe-window)
+(global-set-key (kbd "C-M-n") 'next-multiframe-window)
+(global-set-key (kbd "C-M-p") 'previous-multiframe-window)  
 
 ;; color
 (custom-set-variables
