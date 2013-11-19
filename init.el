@@ -95,3 +95,4 @@
   (interactive)
   (save-excursion (mark-defun)
                   (perltidy-region)))
+(setq auto-mode-alist (cons '("\\.t$" . perl-mode) auto-mode-alist))
