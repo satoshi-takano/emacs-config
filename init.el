@@ -39,9 +39,22 @@
 (global-set-key "\M-c" 'comment-region)
 (global-set-key (kbd "C-t") 'next-multiframe-window)
 (global-set-key (kbd "C-M-n") 'next-multiframe-window)
-(global-set-key (kbd "C-M-p") 'previous-multiframe-window)  
+(global-set-key (kbd "C-M-p") 'previous-multiframe-window)
+(global-set-key (kbd "C-M-p") 'previous-multiframe-window)
+;; diff
+(global-set-key (kbd "C-x d") 'vc-diff)
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-attribute 'diff-added nil
+                         :foreground "white" :background "dark green")
+     (set-face-attribute 'diff-removed nil
+                         :foreground "white" :background "dark red")
+     (set-face-attribute 'diff-refine-change nil
+                         :foreground "white" :background nil
+                         :weight 'bold :inverse-video nil)
+))
 
-;; color
+;; coladfor
 (custom-set-variables
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-enabled-themes (quote (wheatgrass))))
