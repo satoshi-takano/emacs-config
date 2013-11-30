@@ -41,18 +41,12 @@
 (global-set-key (kbd "C-M-n") 'next-multiframe-window)
 (global-set-key (kbd "C-M-p") 'previous-multiframe-window)
 (global-set-key (kbd "C-M-p") 'previous-multiframe-window)
-;; diff
-(global-set-key (kbd "C-x d") 'vc-diff)
-(eval-after-load 'diff-mode
-  '(progn
-     (set-face-attribute 'diff-added nil
-                         :foreground "white" :background "dark green")
-     (set-face-attribute 'diff-removed nil
-                         :foreground "white" :background "dark red")
-     (set-face-attribute 'diff-refine-change nil
-                         :foreground "white" :background nil
-                         :weight 'bold :inverse-video nil)
-))
+;;(global-set-key (kbd "C-r") 'revert-buffer)
+ (defun revert-buffer-no-confirm ()
+   "Revert buffer without confirmation."
+   (interactive) (revert-buffer t t))
+(global-set-key (kbd "C-r") 'revert-buffer-no-confirm)
+;;(global-set-key (kbd "C-r") (lambda () (interactive) (revert-buffer t)))
 
 ;; coladfor
 (custom-set-variables
