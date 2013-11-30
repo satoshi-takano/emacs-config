@@ -41,12 +41,9 @@
 (global-set-key (kbd "C-M-n") 'next-multiframe-window)
 (global-set-key (kbd "C-M-p") 'previous-multiframe-window)
 (global-set-key (kbd "C-M-p") 'previous-multiframe-window)
-;;(global-set-key (kbd "C-r") 'revert-buffer)
  (defun revert-buffer-no-confirm ()
-   "Revert buffer without confirmation."
    (interactive) (revert-buffer t t))
 (global-set-key (kbd "C-r") 'revert-buffer-no-confirm)
-;;(global-set-key (kbd "C-r") (lambda () (interactive) (revert-buffer t)))
 
 ;; coladfor
 (custom-set-variables
