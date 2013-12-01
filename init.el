@@ -30,6 +30,7 @@
 (setq-default truncate-partial-width-windows nil)
 (setq default-frame-alist initial-frame-alist)
 (setq hl-line-face 'hlline-face)
+(setq scss-compile-at-save nil)
 (global-hl-line-mode)
 
 (global-set-key "\C-m" 'newline-and-indent)
