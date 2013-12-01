@@ -1,4 +1,4 @@
 # name: DocType HTML5
 # key: doctype
 # --
-<!DOCTYPE>
+<!DOCTYPE html>
