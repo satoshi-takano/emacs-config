@@ -115,5 +115,6 @@
 (add-hook 'cperl-mode-hook
           (lambda ()
             (define-key cperl-mode-map (kbd ".") (smartchr '("." "->" "=>")))
-            (define-key cperl-mode-map (kbd "m") (smartchr '("m" "my `!!' = ;")))
+            (define-key cperl-mode-map (kbd "m") (smartchr '("m" "my $`!!' = ;" "my @`!!' = ;" "my %`!!' = ;")))
+            (define-key cperl-mode-map (kbd "r") (smartchr '("r" "return `!!'")))            
           ))

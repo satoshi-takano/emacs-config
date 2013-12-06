@@ -1,6 +1,6 @@
 # key: sql
 # name: sql
 # --
-my $sql = <<'SQL'
+my $sql = <<'SQL';
 ${1:sql}
 SQL
