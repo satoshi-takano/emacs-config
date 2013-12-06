@@ -89,9 +89,9 @@
 
 ;; perl
 (add-hook 'perl-mode-hook '(lambda () (flymake-mode t)))
-(setq auto-mode-alist (cons '("\\.pl$" . cperl-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.pm$" . cperl-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.t$" . cperl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.pl$" . perl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.pm$" . perl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.t$" . perl-mode) auto-mode-alist))
 
 (defun perltidy-region ()
   (interactive)
@@ -112,9 +112,9 @@
 (autopair-global-mode)
 
 (require 'smartchr)
-(add-hook 'cperl-mode-hook
+(add-hook 'perl-mode-hook
           (lambda ()
-            (define-key cperl-mode-map (kbd ".") (smartchr '("." "->" "=>")))
-            (define-key cperl-mode-map (kbd "m") (smartchr '("m" "my $`!!' = ;" "my @`!!' = ;" "my %`!!' = ;")))
-            (define-key cperl-mode-map (kbd "r") (smartchr '("r" "return `!!'")))            
+            (define-key perl-mode-map (kbd ".") (smartchr '("." "->" "=>")))
+            (define-key perl-mode-map (kbd "m") (smartchr '("m" "my $`!!' = ;" "my @`!!' = ;" "my %`!!' = ;")))
+            (define-key perl-mode-map (kbd "r") (smartchr '("r" "return `!!'")))            
           ))
