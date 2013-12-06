@@ -87,9 +87,11 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 
 
-
 ;; perl
 (add-hook 'perl-mode-hook '(lambda () (flymake-mode t)))
+(setq auto-mode-alist (cons '("\\.pl$" . cperl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.pm$" . cperl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.t$" . cperl-mode) auto-mode-alist))
 
 (defun perltidy-region ()
   (interactive)
@@ -100,7 +102,18 @@
   (interactive)
   (save-excursion (mark-defun)
                   (perltidy-region)))
-(setq auto-mode-alist (cons '("\\.t$" . perl-mode) auto-mode-alist))
+
 
 ;; magit
 (require 'magit)
+
+;; autopair
+(require 'autopair)
+(autopair-global-mode)
+
+(require 'smartchr)
+(add-hook 'cperl-mode-hook
+          (lambda ()
+            (define-key cperl-mode-map (kbd ".") (smartchr '("." "->" "=>")))
+            (define-key cperl-mode-map (kbd "m") (smartchr '("m" "my `!!' = ;")))
+          ))
