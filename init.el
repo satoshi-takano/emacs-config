@@ -110,11 +110,3 @@
 ;; autopair
 (require 'autopair)
 (autopair-global-mode)
-
-(require 'smartchr)
-(add-hook 'perl-mode-hook
-          (lambda ()
-            (define-key perl-mode-map (kbd ".") (smartchr '("." "->" "=>")))
-            (define-key perl-mode-map (kbd "m") (smartchr '("m" "my $`!!' = ;" "my @`!!' = ;" "my %`!!' = ;")))
-            (define-key perl-mode-map (kbd "r") (smartchr '("r" "return `!!'")))            
-          ))
