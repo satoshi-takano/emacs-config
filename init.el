@@ -38,6 +38,7 @@
 (global-set-key "\M-n" (kbd "C-u 5 C-n"))
 (global-set-key "\M-p" (kbd "C-u 5 C-p"))
 (global-set-key "\M-c" 'comment-region)
+(global-set-key (kbd "M-SPC") 'set-rectangular-region-anchor)
 (global-set-key (kbd "C-t") 'next-multiframe-window)
 (global-set-key (kbd "C-M-n") 'next-multiframe-window)
 (global-set-key (kbd "C-M-p") 'previous-multiframe-window)
@@ -107,6 +108,7 @@
 ;; magit
 (require 'magit)
 
-;; autopair
-(require 'autopair)
-(autopair-global-mode)
+;; multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
