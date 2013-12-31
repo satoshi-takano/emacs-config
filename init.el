@@ -8,8 +8,6 @@
   'package-archives
    '("melpa" . "http://melpa.milkbox.net/packages/"))
 
-
-
 (setq inhibit-startup-message t)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -52,6 +50,7 @@
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-enabled-themes (quote (wheatgrass))))
 
+
 ;; auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
@@ -82,7 +81,7 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "C-]") 'helm-ls-git-ls)
+(global-set-key (kbd "C-x l") 'helm-ls-git-ls)
 
 ;; yasnippet
 (require 'yasnippet)
@@ -109,11 +108,15 @@
   (save-excursion (mark-defun)
                   (perltidy-region)))
 
-
-;; magit
-(require 'magit)
-
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
+
+;; expand-region
+(global-set-key (kbd "M-]") 'er/expand-region)
+(global-set-key (kbd "M-[") 'er/contract-region)
+
+;; highlight-symbol
+(global-set-key (kbd "C-x m") 'highlight-symbol-at-point)
+(global-set-key (kbd "M-m") 'highlight-symbol-remove-all)
