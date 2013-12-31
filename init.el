@@ -67,17 +67,22 @@
 ;; wb-line-number
 (require 'wb-line-number)
 (global-set-key "\C-l" 'wb-line-number-toggle)
-
-;;kill-ring
-(global-set-key "\M-y" 'anything-show-kill-ring)
  
 ;; undo-tree
 (require 'undo-tree)
 (global-undo-tree-mode 1)
 
 ;; anything
-(require 'anything)
-(require 'anything-startup)
+;; (require 'anything)
+;; (require 'anything-startup)
+;; (global-set-key "\M-y" 'anything-show-kill-ring)
+
+;; helm
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-]") 'helm-ls-git-ls)
 
 ;; yasnippet
 (require 'yasnippet)
