@@ -15,7 +15,7 @@
 
 (setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 (setq-default case-fold-search nil)
 
 (line-number-mode t)
@@ -50,10 +50,10 @@
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-enabled-themes (quote (wheatgrass))))
 
-
 ;; auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
+(setq ac-ignore-case nil)
 
 ;; dropdown-list
 (require 'dropdown-list)
@@ -80,12 +80,12 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x l") 'helm-ls-git-ls)
 
 ;; yasnippet
 (require 'yasnippet)
-(yas--initialize);
+(yas--initialize)
 (yas-global-mode 1)
 
 ;; js-mode
@@ -120,3 +120,19 @@
 ;; highlight-symbol
 (global-set-key (kbd "C-x m") 'highlight-symbol-at-point)
 (global-set-key (kbd "M-m") 'highlight-symbol-remove-all)
+
+;; magit
+(eval-after-load 'magit
+  '(progn
+     (set-face-background 'magit-diff-add "dark green")
+     (set-face-background 'magit-diff-del "dark red")
+     (when (not window-system)
+       (set-face-background 'magit-item-highlight "black"))))
+(global-set-key (kbd "C-x g") 'magit-status)
+
+;; org-mode
+(add-hook 'org-mode-hook 'turn-on-font-lock) 
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c l") 'org-store-link)
+(setq org-todo-keywords '("TODO" "DOING" "DONE")
+      org-todo-interpretation 'sequence)
