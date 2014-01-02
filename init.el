@@ -136,3 +136,5 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 (setq org-todo-keywords '("TODO" "DOING" "DONE")
       org-todo-interpretation 'sequence)
+(setq org-directory "~/org/")
+(setq org-agenda-files (list org-directory))
