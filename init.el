@@ -31,7 +31,6 @@
 (setq scss-compile-at-save nil)
 (global-hl-line-mode)
 
-(global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-h" 'backward-delete-char)
 (global-set-key "\M-n" (kbd "C-u 5 C-n"))
 (global-set-key "\M-p" (kbd "C-u 5 C-p"))
@@ -54,6 +53,8 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (setq ac-ignore-case nil)
+(define-key ac-completing-map (kbd "C-n") 'ac-next)
+(define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
 ;; dropdown-list
 (require 'dropdown-list)
@@ -118,8 +119,7 @@
 (global-set-key (kbd "M-[") 'er/contract-region)
 
 ;; highlight-symbol
-(global-set-key (kbd "C-x m") 'highlight-symbol-at-point)
-(global-set-key (kbd "M-m") 'highlight-symbol-remove-all)
+(global-set-key (kbd "M-m") 'highlight-symbol-at-point)
 
 ;; magit
 (eval-after-load 'magit
@@ -138,3 +138,12 @@
       org-todo-interpretation 'sequence)
 (setq org-directory "~/org/")
 (setq org-agenda-files (list org-directory))
+
+;; company-mode
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; helm-company
+(eval-after-load 'company
+  '(progn
+     (define-key company-mode-map (kbd "C-q") 'helm-company)
+     (define-key company-active-map (kbd "C-q") 'helm-company)))
