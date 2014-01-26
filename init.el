@@ -72,11 +72,6 @@
 (require 'undo-tree)
 (global-undo-tree-mode 1)
 
-;; anything
-;; (require 'anything)
-;; (require 'anything-startup)
-;; (global-set-key "\M-y" 'anything-show-kill-ring)
-
 ;; helm
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -89,9 +84,23 @@
 (yas--initialize)
 (yas-global-mode 1)
 
+;; flymake
+(global-set-key "\M-e" 'flymake-goto-next-error)
+(global-set-key "\M-E" 'flymake-goto-prev-error)
+
+(defun display-error-message ()
+  (message (get-char-property (point) 'help-echo)))
+(defadvice flymake-goto-prev-error (after flymake-goto-prev-error-display-message)
+  (display-error-message))
+(defadvice flymake-goto-next-error (after flymake-goto-next-error-display-message)
+  (display-error-message))
+(ad-activate 'flymake-goto-prev-error 'flymake-goto-prev-error-display-message)
+(ad-activate 'flymake-goto-next-error 'flymake-goto-next-error-display-message)
+
 ;; js-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 (setq js-indent-level 2)
+(add-hook 'js-mode-hook 'flymake-jslint-load)
 
 ;; perl
 (add-hook 'perl-mode-hook '(lambda () (flymake-mode t)))
@@ -147,3 +156,4 @@
   '(progn
      (define-key company-mode-map (kbd "C-q") 'helm-company)
      (define-key company-active-map (kbd "C-q") 'helm-company)))
+
