@@ -17,6 +17,7 @@
 (setq-default c-basic-offset 4)
 (setq-default tab-width 4)
 (setq-default case-fold-search nil)
+(setq-default read-file-name-completion-ignore-case t) 
 
 (line-number-mode t)
 (column-number-mode t)
