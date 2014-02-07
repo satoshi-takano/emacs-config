@@ -130,6 +130,8 @@
 
 ;; highlight-symbol
 (global-set-key (kbd "M-m") 'highlight-symbol-at-point)
+(global-set-key (kbd "M-u") 'highlight-symbol-prev)
+(global-set-key (kbd "M-j") 'highlight-symbol-next)
 
 ;; magit
 (eval-after-load 'magit
