@@ -47,8 +47,13 @@
 
 ;; coladfor
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(custom-enabled-themes (quote (wheatgrass))))
+ '(custom-enabled-themes (quote (wheatgrass)))
+ '(custom-safe-themes (quote ("a3d519ee30c0aa4b45a277ae41c4fa1ae80e52f04098a2654979b1ab859ab0bf" default))))
 
 ;; auto-complete
 (require 'auto-complete-config)
@@ -160,3 +165,12 @@
      (define-key company-mode-map (kbd "C-q") 'helm-company)
      (define-key company-active-map (kbd "C-q") 'helm-company)))
 
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; load theme
+(load-theme 'zenburn t)
