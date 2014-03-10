@@ -16,6 +16,8 @@
 (setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
 (setq-default tab-width 4)
+(setq sgml-basic-offset 4)
+(setq-default indent-tabs-mode t)
 (setq-default case-fold-search nil)
 (setq-default read-file-name-completion-ignore-case t) 
 
@@ -102,6 +104,9 @@
   (display-error-message))
 (ad-activate 'flymake-goto-prev-error 'flymake-goto-prev-error-display-message)
 (ad-activate 'flymake-goto-next-error 'flymake-goto-next-error-display-message)
+
+;; html-mode
+(add-to-list 'auto-mode-alist '("\\.tt$" . html-mode))
 
 ;; js-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))

@@ -5,6 +5,7 @@
       '(
         end-of-buffer
         kill-region
+        org-self-insert-command
         ))
 
 (setq mc/cmds-to-run-once
