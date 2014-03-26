@@ -155,6 +155,9 @@
       org-todo-interpretation 'sequence)
 (setq org-directory "~/org/")
 (setq org-agenda-files (list org-directory))
+(setq org-agenda-custom-commands
+    '(("M" agenda "" ((org-agenda-ndays 21)))))
+
 
 ;; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
@@ -174,3 +177,5 @@
 
 ;; load theme
 (load-theme 'zenburn t)
+
+(projectile-global-mode)
