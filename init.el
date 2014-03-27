@@ -13,11 +13,10 @@
 (setq auto-save-default nil)
 (setq delete-auto-save-files t)
 
-(setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
 (setq-default tab-width 4)
 (setq sgml-basic-offset 4)
-(setq-default indent-tabs-mode t)
+(setq-default indent-tabs-mode nil)
 (setq-default case-fold-search nil)
 (setq-default read-file-name-completion-ignore-case t) 
 
