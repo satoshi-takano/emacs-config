@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/org/" "~/proj/work/guide/dev/guide-server/")
+("~/org/" "~/.emacs.d/" "~/proj/work/guide/dev/guide-server/")

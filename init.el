@@ -183,3 +183,6 @@
 (load-theme 'zenburn t)
 
 (projectile-global-mode)
+
+(setq sml/theme 'dark)
+(sml/setup)
