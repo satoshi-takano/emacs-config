@@ -186,3 +186,7 @@
 
 (setq sml/theme 'dark)
 (sml/setup)
+
+;; 
+(require 'flymake-jslint)                                                                                                                                                                                                                                                     
+(add-hook 'js-mode-hook 'flymake-jslint-load)

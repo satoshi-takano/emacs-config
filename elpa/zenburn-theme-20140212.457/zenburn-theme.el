@@ -325,21 +325,21 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(flycheck-fringe-warning ((t (:foreground ,zenburn-yellow :weight bold))))
    `(flycheck-fringe-info ((t (:foreground ,zenburn-cyan :weight bold))))
 ;;;;; flymake
-   `(flymake-errline
-     ((((supports :underline (:style wave)))
-       (:underline (:style wave :color ,zenburn-red)
-                   :inherit unspecified :foreground unspecified :background unspecified))
-      (t (:foreground ,zenburn-red-1 :weight bold :underline t))))
-   `(flymake-warnline
-     ((((supports :underline (:style wave)))
-       (:underline (:style wave :color ,zenburn-orange)
-                   :inherit unspecified :foreground unspecified :background unspecified))
-      (t (:foreground ,zenburn-orange :weight bold :underline t))))
-   `(flymake-infoline
-     ((((supports :underline (:style wave)))
-       (:underline (:style wave :color ,zenburn-green)
-                   :inherit unspecified :foreground unspecified :background unspecified))
-      (t (:foreground ,zenburn-green-1 :weight bold :underline t))))
+   ;; `(flymake-errline
+   ;;   ((((supports :underline (:style wave)))
+   ;;     (:underline (:style wave :color ,zenburn-red)
+   ;;                 :inherit unspecified :foreground unspecified :background unspecified))
+   ;;    (t (:foreground ,zenburn-red-1 :weight bold :underline t))))
+   ;; `(flymake-warnline
+   ;;   ((((supports :underline (:style wave)))
+   ;;     (:underline (:style wave :color ,zenburn-orange)
+   ;;                 :inherit unspecified :foreground unspecified :background unspecified))
+   ;;    (t (:foreground ,zenburn-orange :weight bold :underline t))))
+   ;; `(flymake-infoline
+   ;;   ((((supports :underline (:style wave)))
+   ;;     (:underline (:style wave :color ,zenburn-green)
+   ;;                 :inherit unspecified :foreground unspecified :background unspecified))
+   ;;    (t (:foreground ,zenburn-green-1 :weight bold :underline t))))
 ;;;;; flyspell
    `(flyspell-duplicate
      ((((supports :underline (:style wave)))
