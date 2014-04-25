@@ -110,7 +110,9 @@
 ;; js-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 (setq js-indent-level 2)
-(add-hook 'js-mode-hook 'flymake-jslint-load)
+(add-hook 'js-mode-hook '(lambda ()
+          (require 'flymake-jshint)
+          (flymake-jshint-load)))
 
 ;; perl
 (add-hook 'perl-mode-hook '(lambda () (flymake-mode t)))
@@ -186,7 +188,3 @@
 
 (setq sml/theme 'dark)
 (sml/setup)
-
-;; 
-(require 'flymake-jslint)                                                                                                                                                                                                                                                     
-(add-hook 'js-mode-hook 'flymake-jslint-load)
