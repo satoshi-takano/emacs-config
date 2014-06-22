@@ -130,6 +130,12 @@
   (save-excursion (mark-defun)
                   (perltidy-region)))
 
+(defun perl-eval (beg end)
+  "Run selected region as Perl code"
+  (interactive "r")
+  (shell-command-on-region beg end "perl")
+)
+
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
