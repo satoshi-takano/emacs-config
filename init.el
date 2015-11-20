@@ -145,6 +145,8 @@
 (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
 (setq ruby-electric-expand-delimiters-list nil)
 
+(add-hook 'ruby-mode-hook 'smart-newline-mode)
+
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
@@ -203,3 +205,6 @@
 
 (setq sml/theme 'dark)
 (sml/setup)
+
+
+(smart-newline-mode t)
