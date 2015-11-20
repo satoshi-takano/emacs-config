@@ -136,6 +136,15 @@
   (shell-command-on-region beg end "perl")
 )
 
+;; ruby
+(require 'ruby-block)
+(ruby-block-mode t)
+(setq ruby-block-highlight-toggle t)
+
+(require 'ruby-electric)
+(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+(setq ruby-electric-expand-delimiters-list nil)
+
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
