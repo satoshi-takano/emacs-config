@@ -142,10 +142,15 @@
 (setq ruby-block-highlight-toggle t)
 
 (require 'ruby-electric)
-(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+(add-hook 'ruby-mode-hook '(lambda () (robe-mode)(ruby-electric-mode t)))
 (setq ruby-electric-expand-delimiters-list nil)
 
 (add-hook 'ruby-mode-hook 'smart-newline-mode)
+
+(autoload 'robe-mode "robe" "Code navigation, documentation lookup and completion for Ruby" t nil)
+(autoload 'ac-robe-setup "ac-robe" "auto-complete robe" nil nil)
+(add-hook 'robe-mode-hook 'ac-robe-setup)
+(add-hook 'robe-mode-hook 'robe-start)
 
 ;; multiple cursors
 (require 'multiple-cursors)
