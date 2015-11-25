@@ -152,6 +152,9 @@
 (add-hook 'robe-mode-hook 'ac-robe-setup)
 (add-hook 'robe-mode-hook 'robe-start)
 
+(require 'rubocop)
+(add-hook 'ruby-mode-hook 'rubocop-mode)
+
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
