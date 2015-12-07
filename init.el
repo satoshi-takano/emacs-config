@@ -139,6 +139,8 @@
 
 ;; ruby
 (setq ruby-deep-indent-paren-style nil)
+(setq ruby-insert-encoding-magic-comment nil)
+
 ;; http://blog.willnet.in/entry/2012/06/16/212313
 (defadvice ruby-indent-line (after unindent-closing-paren activate)
   (let ((column (current-column))
