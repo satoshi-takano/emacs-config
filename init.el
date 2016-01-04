@@ -30,7 +30,6 @@
 (setq-default truncate-partial-width-windows nil)
 (setq default-frame-alist initial-frame-alist)
 (setq hl-line-face 'hlline-face)
-(setq scss-compile-at-save nil)
 (global-hl-line-mode)
 
 (global-set-key "\C-h" 'backward-delete-char)
@@ -227,6 +226,22 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; scss
+(defun scss-custom ()
+  "scss-mode-hook"
+  (and
+   (set (make-local-variable 'css-indent-offset) 2)
+   (set (make-local-variable 'scss-compile-at-save) nil)
+   )
+  )
+(add-hook 'scss-mode-hook
+  '(lambda() (scss-custom)))
+
+;; html
+(add-hook 'html-mode-hook
+        (lambda ()
+          (set (make-local-variable 'sgml-basic-offset) 2)))
 
 ;; load theme
 (load-theme 'zenburn t)
