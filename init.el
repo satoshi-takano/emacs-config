@@ -39,9 +39,8 @@
 (global-set-key "\M-c" 'comment-region)
 (global-set-key (kbd "M-SPC") 'set-rectangular-region-anchor)
 (global-set-key (kbd "C-t") 'next-multiframe-window)
-(global-set-key (kbd "C-M-n") 'next-multiframe-window)
-(global-set-key (kbd "C-M-p") 'previous-multiframe-window)
-(global-set-key (kbd "C-M-p") 'previous-multiframe-window)
+(global-set-key (kbd "C-M-t") 'previous-multiframe-window)
+
  (defun revert-buffer-no-confirm ()
    (interactive) (revert-buffer t t))
 (global-set-key (kbd "C-r") 'revert-buffer-no-confirm)
@@ -108,12 +107,15 @@
 ;; html-mode
 (add-to-list 'auto-mode-alist '("\\.tt$" . html-mode))
 
-;; js-mode
-(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
-(setq js-indent-level 2)
-(add-hook 'js-mode-hook '(lambda ()
-          (require 'flymake-jshint)
-          (flymake-jshint-load)))
+;; javascript
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.react\.js$" . js2-jsx-mode))
+(add-hook 'js2-mode-hook
+          '(lambda ()
+             (require 'flymake-jshint)
+             (flymake-jshint-load)
+             (setq js2-basic-offset 2)))
 
 ;; perl
 (add-hook 'perl-mode-hook '(lambda () (flymake-mode t)))
