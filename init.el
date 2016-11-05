@@ -243,6 +243,17 @@
         (lambda ()
           (set (make-local-variable 'sgml-basic-offset) 4)))
 
+;; golang
+(eval-after-load "go-mode"
+  '(progn
+     (go-eldoc-setup)
+     (add-hook 'before-save-hook 'gofmt-before-save)
+     (add-hook 'before-save-hook 'gofmt-before-save)))
+;;     (require 'go-autocomplete)))
+
+;;(require 'go-direx) ;; Don't need to require, if you install by package.el
+;;(define-key go-mode-map (kbd "C-c C-j") 'go-direx-pop-to-buffer)
+
 ;; load theme
 (load-theme 'zenburn t)
 
