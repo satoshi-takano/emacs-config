@@ -18,7 +18,7 @@
 (setq sgml-basic-offset 4)
 (setq-default indent-tabs-mode nil)
 (setq-default case-fold-search nil)
-(setq-default read-file-name-completion-ignore-case t) 
+(setq-default read-file-name-completion-ignore-case t)
 
 (line-number-mode t)
 (column-number-mode t)
@@ -73,7 +73,7 @@
 ;; wb-line-number
 (require 'wb-line-number)
 (global-set-key "\C-l" 'wb-line-number-toggle)
- 
+
 ;; undo-tree
 (require 'undo-tree)
 (global-undo-tree-mode 1)
@@ -200,7 +200,7 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;; org-mode
-(add-hook 'org-mode-hook 'turn-on-font-lock) 
+(add-hook 'org-mode-hook 'turn-on-font-lock)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (setq org-todo-keywords '("TODO" "DOING" "DONE")
@@ -248,8 +248,8 @@
   '(progn
      (go-eldoc-setup)
      (add-hook 'before-save-hook 'gofmt-before-save)
-     (add-hook 'before-save-hook 'gofmt-before-save)))
-;;     (require 'go-autocomplete)))
+     (require 'go-autocomplete)))
+(add-hook 'go-mode-hook 'flycheck-mode)
 
 ;;(require 'go-direx) ;; Don't need to require, if you install by package.el
 ;;(define-key go-mode-map (kbd "C-c C-j") 'go-direx-pop-to-buffer)
