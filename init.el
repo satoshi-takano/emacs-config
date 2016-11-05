@@ -114,7 +114,7 @@
           '(lambda ()
              (require 'flymake-jshint)
              (flymake-jshint-load)
-             (setq js2-basic-offset 2)))
+             (setq js2-basic-offset 4)))
 
 ;; perl
 (add-hook 'perl-mode-hook '(lambda () (flymake-mode t)))
@@ -241,7 +241,7 @@
 ;; html
 (add-hook 'html-mode-hook
         (lambda ()
-          (set (make-local-variable 'sgml-basic-offset) 2)))
+          (set (make-local-variable 'sgml-basic-offset) 4)))
 
 ;; load theme
 (load-theme 'zenburn t)
