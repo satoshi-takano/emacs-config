@@ -1,0 +1,23 @@
+(setq dired-use-ls-dired t)
+(setq inhibit-startup-message t)
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+(setq delete-auto-save-files t)
+
+(setq-default c-basic-offset 4)
+(setq-default tab-width 4)
+(setq sgml-basic-offset 4)
+(setq-default indent-tabs-mode nil)
+(setq-default case-fold-search nil)
+(setq-default read-file-name-completion-ignore-case t)
+
+(line-number-mode t)
+(column-number-mode t)
+
+(setq column-number-mode t)
+(show-paren-mode t)
+(setq frame-title-format "%f")
+(setq-default truncate-lines t)
+(setq-default truncate-partial-width-windows nil)
+(setq default-frame-alist initial-frame-alist)
+(setq hl-line-face 'hlline-face)

@@ -1,6 +1,0 @@
-# key: sql
-# name: sql
-# --
-my $sql = <<'SQL';
-${1:sql}
-SQL

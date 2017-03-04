@@ -1,4 +1,0 @@
-# key: p
-# name: print
-# --
-print "$1\n";

@@ -1,4 +1,0 @@
-# name: my @
-# key: m
-# --
-my @${1:variable} = $0
