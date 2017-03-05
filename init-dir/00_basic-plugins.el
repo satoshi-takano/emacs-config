@@ -14,6 +14,10 @@
 (require 'undo-tree)
 (global-undo-tree-mode 1)
 
+;; yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
+
 ;; helm
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -21,8 +25,14 @@
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x l") 'helm-ls-git-ls)
 
-;; yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
+;; projectile
+(require 'helm-projectile)
+(helm-projectile-on)
+(global-set-key (kbd "C-x p") 'helm-projectile)
 
+;; expand-region
+(global-set-key (kbd "M-=") 'er/expand-region)
+(global-set-key (kbd "M--") 'er/contract-region)
 
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
