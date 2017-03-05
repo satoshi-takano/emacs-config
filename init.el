@@ -6,6 +6,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (require 'init-loader)
+(setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/init-dir")
 
 (when (eq system-type 'darwin)
