@@ -19,4 +19,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (highlight-symbol helm-projectile go-mode swift-mode zenburn-theme yasnippet undo-tree smart-mode-line magit init-loader helm expand-region auto-complete ada-mode ace-window))))
+    (helm-open-github robe helm-robe highlight-symbol helm-projectile go-mode swift-mode zenburn-theme yasnippet undo-tree smart-mode-line magit init-loader helm expand-region auto-complete ada-mode ace-window))))
