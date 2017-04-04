@@ -11,5 +11,5 @@
 (global-set-key (kbd "M-j") 'highlight-symbol-next)
 
 ;; rectangle
-(global-set-key (kbd "M-SPC") 'rectangle-mark-mode)
+(global-set-key (kbd "M-SPC") 'set-rectangular-region-anchor)
 (global-set-key (kbd "M-i") 'string-rectangle)

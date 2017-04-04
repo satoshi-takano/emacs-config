@@ -21,3 +21,5 @@
 (setq-default truncate-partial-width-windows nil)
 (setq default-frame-alist initial-frame-alist)
 (setq hl-line-face 'hlline-face)
+
+(setq ruby-insert-encoding-magic-comment nil)
