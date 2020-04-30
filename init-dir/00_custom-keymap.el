@@ -13,3 +13,4 @@
 ;; rectangle
 (global-set-key (kbd "M-SPC") 'set-rectangular-region-anchor)
 (global-set-key (kbd "M-i") 'string-rectangle)
+(global-set-key (kbd "M-RET") 'set-mark-command)
